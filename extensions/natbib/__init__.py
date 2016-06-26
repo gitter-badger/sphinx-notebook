@@ -479,7 +479,7 @@ class CitationReferencesDirective(Directive):
     node = nodes.table('',
                        table_spec_node,
                        nodes.tgroup('',
-                                    nodes.colspec(colwidth=10, classes=['label']),
+                                    nodes.colspec(colwidth=10, classes=['bib-label']),
                                     nodes.colspec(colwidth=90),
                                     tbody))
 
