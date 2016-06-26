@@ -185,3 +185,25 @@ blockquote {
 p.attribution {
 	color: #999;
 }
+
+/*Adjust Math*/
+.math {
+  text-align:center;
+}
+
+img.math {
+    width: inherit;
+}
+
+
+/*Adding Margin to Footer*/
+.footer {
+  margin-top: 3em !important;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+.bib-label {
+    
+}

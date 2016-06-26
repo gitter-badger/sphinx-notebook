@@ -36,11 +36,11 @@ source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 
 # General information about the project.
-project = u'The Sphinx Thesis Resource (sphinxtr)'
-author = u'Jeff Terrace'
-copyright = u'by %s, 2012.' % author
-version = '0.1'
-release = '0.1'
+project = u'The Sphinx Notebook'
+author = u'NeuronStar'
+copyright = u'by %s, 2016' % author
+version = '0.0.1'
+release = '0.0.1'
 
 # Turns on numbered figures for HTML output
 number_figures = True
@@ -84,9 +84,86 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output ---------------------------------------------------
 
+# Import alabaster theme
+# import alabaster
+
+# html_theme_path = [alabaster.get_path()]
+html_theme_path = ["_themes/sphinx_bootstrap_theme",]
+html_theme = 'bootstrap'
+
+
+# (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
+# Path should be relative to the ``_static`` files directory.
+# html_logo = "assets/logo.png"
+
+# Theme options are theme-specific and customize the look and feel of a
+# theme further.
+html_theme_options = {
+    # Navigation bar title. (Default: ``project`` value)
+    'navbar_title': "Sphinx Notebook",
+
+    # Tab name for entire site. (Default: "Site")
+    'navbar_site_name': "Chapters",
+
+    # Render the next and previous page links in navbar. (Default: true)
+    'navbar_sidebarrel': True,
+
+    # Render the current pages TOC in the navbar. (Default: true)
+    'navbar_pagenav': True,
+
+    # Tab name for the current pages TOC. (Default: "Page")
+    'navbar_pagenav_name': "Sections",
+
+    # Global TOC depth for "site" navbar tab. (Default: 1)
+    # Switching to -1 shows all levels.
+    'globaltoc_depth': 2,
+    
+    # A list of tuples containing pages or urls to link to.
+    # Valid tuples should be in the following forms:
+    #    (name, page)                 # a link to a page
+    #    (name, "/aa/bb", 1)          # a link to an arbitrary relative url
+    #    (name, "http://example.com", True) # arbitrary absolute url
+    # Note the "1" or "True" value above as the third argument to indicate
+    # an arbitrary url.
+    'navbar_links': [
+        ("NeuronStar", "http://neuronstar.cc", True),
+    ],
+
+    # Include hidden TOCs in Site navbar?
+    #
+    # Note: If this is "false", you cannot have mixed ``:hidden:`` and
+    # non-hidden ``toctree`` directives in the same page, or else the build
+    # will break.
+    #
+    # Values: "true" (default) or "false"
+    'globaltoc_includehidden': "true",
+
+    # HTML navbar class (Default: "navbar") to attach to <div> element.
+    # For black navbar, do "navbar navbar-inverse"
+    'navbar_class': "navbar navbar-inverse",
+
+    # Fix navigation bar to top of page?
+    # Values: "true" (default) or "false"
+    'navbar_fixed_top': "true",
+
+    # Location of link to source.
+    # Options are "nav" (default), "footer" or anything else to exclude.
+    'source_link_position': "nav",
+
+    # Bootswatch (http://bootswatch.com/) theme.
+    #
+    # Options are nothing (default) or the name of a valid theme
+    # such as "amelia" or "cosmo".
+    'bootswatch_theme': "united",
+
+    # Choose Bootstrap version.
+    # Values: "3" (default) or "2" (in quotes)
+    'bootstrap_version': "3",
+}
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinxdoc'
+#html_theme = 'sphinxdoc'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -126,7 +203,7 @@ html_static_path = ['static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-template_files = ['localtoc.html', 'relations.html', 'sourcelink.html']
+template_files = ['localtoc.html']
 if not tags.has('singlehtml'):
     # only include search box for regular html, not single page html
     template_files.append('searchbox.html')
@@ -192,7 +269,7 @@ ADDITIONAL_FOOTER = """
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     'papersize': 'letterpaper',
-    
+
     # * gets passed to \documentclass
     # * default options are single sided, double spaced
     #   you can change them with these options:
@@ -201,30 +278,30 @@ latex_elements = {
     # * you might want to omit the list of tables (lot)
     #   if you use figtable without the :nofig: option
     'classoptions': ',english,lof,lot',
-    
+
     # The font size ('10pt', '11pt' or '12pt').
     'pointsize': '12pt',
-    
+
     # Additional stuff for the LaTeX preamble.
     'preamble': ADDITIONAL_PREAMBLE,
-    
+
     # Additional footer
     'footer': ADDITIONAL_FOOTER,
-    
+
     # disable font inclusion
     'fontpkg': '',
     'fontenc': '',
-    
+
     # disable fancychp
     'fncychap': '',
-    
+
     # get rid of the sphinx wrapper class file
     'wrapperclass': 'puthesis',
-    
+
     # override maketitle
     'maketitle': '\makefrontmatter',
     'tableofcontents': '',
-    
+
     # disable index printing
     'printindex': '',
 }

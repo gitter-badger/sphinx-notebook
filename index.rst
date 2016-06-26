@@ -2,9 +2,9 @@
 
 .. _doc-title:
 
-#########################################
-sphinxtr: |br| The Sphinx Thesis Resource
-#########################################
+##################################################################################
+Sphinx Notebook: |br| Keep Your Notes Using Sphinx
+##################################################################################
 
 .. only:: not singlehtml
 
@@ -34,6 +34,6 @@ License
 This work is licensed under a `Creative Commons Attribution 3.0 United States
 License <http://creativecommons.org/licenses/by/3.0/us/deed.en_US>`_.
 
-.. image:: img/ccicon88x31.png
+.. image:: assets/images/ccicon88x31.png
     :align: center
     :alt: Creative Commons License
